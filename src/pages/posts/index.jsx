@@ -2,6 +2,7 @@ import { getPosts } from "@/api/posts";
 import Head from "next/head";
 import Link from "next/link";
 import someImg from "../../../public/next.svg";
+import Image from "next/image";
 // меняются ли данные (posts, как массив данных)??
  // если данные страницы меняются со временем:
 // const getServerSideProps = async() => {
