@@ -56,9 +56,7 @@ export default function PostPage({ post }) {
     return (
         <>
            <Head>
-            {
                 <title>{"Post " + post.id}</title>
-            }
             </Head>
                 <h1>Post page</h1>
                 <h2>{post.title}</h2>
