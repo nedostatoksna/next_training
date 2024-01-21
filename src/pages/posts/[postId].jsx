@@ -1,6 +1,7 @@
 import { getPostData, getPosts } from "@/api/posts";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import useSWR from "swr";
 
  const getStaticProps = async({params}) => {
     const post = await getPostData(params.postId);
@@ -19,17 +20,6 @@ import { useRouter } from "next/router";
 
 
  const getStaticPaths = async() => {
-    const fetcher = (url) => fetch(url).then(res => res.json);
-    const { date, error } = useSWR('/api/user', fetcher);
-    if (!data) {
-        return <div>loading...</div>
-    }
-    if (error) {
-        return <div>error</div>
-    }
-    if (router.isFallback) {
-        return <div>error</div>
-    }
 
     const posts = await getPosts();
     const paths = posts.map(post => ({
@@ -48,8 +38,20 @@ import { useRouter } from "next/router";
 
 export default function PostPage({ post }) {
     const router = useRouter();
+
     if (router.isFallback) {
         return <div>Loading</div>
+    }
+    const fetcher = (url) => fetch(url).then(res => res.json);
+    const { date, error } = useSWR('/api/user', fetcher);
+    if (!data) {
+        return <div>loading...</div>
+    }
+    if (error) {
+        return <div>error</div>
+    }
+    if (router.isFallback) {
+        return <div>error</div>
     }
     return (
         <>
