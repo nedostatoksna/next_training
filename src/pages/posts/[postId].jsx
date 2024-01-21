@@ -43,7 +43,7 @@ export default function PostPage({ post }) {
         return <div>Loading</div>
     }
     const fetcher = (url) => fetch(url).then(res => res.json);
-    const { date, error } = useSWR('/api/user', fetcher);
+    const { data, error } = useSWR('/api/user', fetcher);
     if (!data) {
         return <div>loading...</div>
     }
