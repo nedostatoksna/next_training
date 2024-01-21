@@ -1,7 +1,7 @@
 import { getPosts } from "@/api/posts";
 import Head from "next/head";
 import Link from "next/link";
-import someImg from "../../../public/next.svg";
+import someImg from "../../../public/vercel.svg";
 import Image from "next/image";
 // меняются ли данные (posts, как массив данных)??
  // если данные страницы меняются со временем:
@@ -29,28 +29,27 @@ export default function PostsPage({ posts }) {
            <Head>
                 <title>It is posts page</title>
             </Head>
-                <h1> Posts page</h1>
-                <ul>
-                    {
-                        posts.map(post => (
-                            <li key={post.id}>
-                      
-                            <Link href={`/posts/${post.id}`}>
-                                {post.title}
-                            </Link>
-                            {/* <Link href={{
-                                pathname:`/posts/${post.id}`,
-                                query: {
-                                    slug: post.title
-                                }
-                            }}>{post.title}</Link> */}
+            <h1> Posts page</h1>
+            <ul>
+                {
+                    posts.map(post => (
+                        <li key={post.id}>
+                    
+                        <Link href={`/posts/${post.id}`}>
+                            {post.title}
+                        </Link>
+                        {/* <Link href={{
+                            pathname:`/posts/${post.id}`,
+                            query: {
+                                slug: post.title
+                            }
+                        }}>{post.title}</Link> */}
 
-                            </li>
-                        ))
-                    }
-                </ul>
+                        </li>
+                    ))
+                }
+            </ul>
             <Image src={someImg} />
-
         </>
      
     )
