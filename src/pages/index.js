@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 
 
 // два варианта для загрузки страницы SSR ? SSG
@@ -36,6 +37,15 @@ export default function HomePage() {
         <title>It is home page</title>
       </Head>
         <h1>Hello, HomePage</h1>
+        <Script  src="https:" strategy="beforeInteractive" />
+        {/* для сторонних файлов и скриптов js
+          beforeInteractive - важные скрипты загружаются до того 
+          как загрузится страница. проверка для ботов
+          afterInteractive - загрузить скрипт после страницы гугл аналитика
+          lazyOnload - виджеты, чаты (асинхронная загрузка)
+        
+        
+         */}
     </>
 
   )
