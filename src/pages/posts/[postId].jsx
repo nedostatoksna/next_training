@@ -60,12 +60,9 @@ export default function PostPage({ post }) {
                 <title>{"Post " + post.id}</title>
             }
             </Head>
-            <main>
                 <h1>Post page</h1>
                 <h2>{post.title}</h2>
                 <h3>{post.body}</h3>
-
-            </main>
 
         </>
      

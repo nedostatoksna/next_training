@@ -35,9 +35,7 @@ export default function HomePage() {
       <Head>
         <title>It is home page</title>
       </Head>
-      <main>
         <h1>Hello, HomePage</h1>
-      </main>
     </>
 
   )

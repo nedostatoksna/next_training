@@ -27,7 +27,6 @@ export default function PostsPage({ posts }) {
            <Head>
                 <title>It is posts page</title>
             </Head>
-            <main>
                 <h1> Posts page</h1>
                 <ul>
                     {
@@ -48,7 +47,6 @@ export default function PostsPage({ posts }) {
                         ))
                     }
                 </ul>
-            </main>
 
         </>
      
