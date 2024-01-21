@@ -1,5 +1,6 @@
 import { getPosts } from "@/api/posts";
 import Head from "next/head";
+import Link from "next/link";
 // меняются ли данные (posts, как массив данных)??
  // если данные страницы меняются со временем:
 // const getServerSideProps = async() => {
@@ -33,9 +34,15 @@ export default function PostsPage({ posts }) {
                         posts.map(post => (
                             <li key={post.id}>
                       
-                            <a href={`/posts/${post.id}`}>
+                            <Link href={`/posts/${post.id}`}>
                                 {post.title}
-                            </a>
+                            </Link>
+                            {/* <Link href={{
+                                pathname:`/posts/${post.id}`,
+                                query: {
+                                    slug: post.title
+                                }
+                            }}>{post.title}</Link> */}
 
                             </li>
                         ))

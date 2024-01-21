@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export default function Header() {
     return (
         <header>
             <ul>
-                <li><a href="/AboutUs">about us</a></li>
-                <li><a href="/">home</a></li>
-                <li><a href="/posts">posts</a></li>
+                <li><Link href="/AboutUs">about us</Link></li>
+                <li><Link href="/">home</Link></li>
+                <li><Link href="/posts">posts</Link></li>
             </ul>
         </header>
     )
