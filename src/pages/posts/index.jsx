@@ -1,6 +1,7 @@
 import { getPosts } from "@/api/posts";
 import Head from "next/head";
 import Link from "next/link";
+import someImg from "../../../public/next.svg";
 // меняются ли данные (posts, как массив данных)??
  // если данные страницы меняются со временем:
 // const getServerSideProps = async() => {
@@ -47,6 +48,7 @@ export default function PostsPage({ posts }) {
                         ))
                     }
                 </ul>
+            <Image src={someImg} />
 
         </>
      
