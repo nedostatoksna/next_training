@@ -2,19 +2,15 @@
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const repo = 'next_training'
-const assetPrefix = `/${repo}/`
-const basePath = `/${repo}`
-
 const nextConfig = process.env.NODE_ENV === 'production' ? {
-  assetPrefix: assetPrefix,
-  basePath: basePath,
+  assetPrefix: isProd ? 'https:///nedostatoksna/next_training/' : undefined,
+  basePath: '/next_training',
   images: {
     domains: ['via.placeholder.com'],
     unoptimized: true,
   },
 } : {
-  basePath: basePath,
+  basePath: '/next_training',
   images: {
     domains: ['via.placeholder.com'],
   },
