@@ -4,8 +4,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   output: 'export',
-  basePath: "/nextjs-page", 
-  assetPrefix:"/nextjs-page",
+  basePath: '/next_training/',
   images: {
     loader: 'akamai',
     path: '',
