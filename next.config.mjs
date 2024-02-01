@@ -6,12 +6,10 @@ const nextConfig = {
   output: 'export',
   basePath: '/next_training/',
   images: {
-    loader: 'akamai',
-    path: '',
     domains: ['via.placeholder.com'],
     unoptimized: true,
   },
-  assetPrefix: isProd ? 'https://myRepoGitPage.io' : undefined,
+  assetPrefix: isProd ? 'https:///nedostatoksna/next_training' : undefined,
   reactStrictMode: true,
 }
 
