@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? 'https:///nedostatoksna/next_training' : undefined,
+  assetPrefix: isProd ? 'https:///nedostatoksna/next_training/' : undefined,
   reactStrictMode: true,
 }
 
