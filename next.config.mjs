@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   output: 'export',
-  basePath: '/next_training/',
+  basePath: '/next_training',
   images: {
     domains: ['via.placeholder.com'],
     unoptimized: true,
