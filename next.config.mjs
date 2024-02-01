@@ -7,7 +7,8 @@ const nextConfig = {
   basePath: '/next_training',
   images: {
     loader: 'akamai',
-    path: '',
+    basePath: "/nextjs-page", 
+    assetPrefix:"/nextjs-page",
     domains: ['via.placeholder.com'],
     unoptimized: true,
   },
