@@ -1,7 +1,6 @@
 import '@/styles/globalStyles.css'
 import Head from 'next/head'
 import {Roboto} from "@next/font/google";
-import "@/../static/jank-empty.css";
 
 const roboto = Roboto({
   subsets: ['latin'],

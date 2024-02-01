@@ -1,15 +1,23 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV === 'production';
+const repo = 'next_training'
+const assetPrefix = `/${repo}/`
+const basePath = `/${repo}`
 
-const nextConfig = {
-  output: 'export',
-  basePath: '/next_training',
+const nextConfig = process.env.NODE_ENV === 'production' ? {
+  assetPrefix: assetPrefix,
+  basePath: basePath,
   images: {
+    domains: ['via.placeholder.com'],
     unoptimized: true,
   },
-  assetPrefix: isProd ? 'https:///nedostatoksna/next_training/' : undefined,
-  reactStrictMode: true,
-}
+} : {
+  basePath: basePath,
+  images: {
+    domains: ['via.placeholder.com'],
+  },
+};
 
 export default nextConfig;
+ 
+
