@@ -1,0 +1,20 @@
+.albums_wrapper {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.album_wrapper {
+    width: 40%;
+    border: 2px solid #e5e7eb;
+    padding: 20px;
+    margin: 15px;
+}
+.album_link {
+    text-decoration: underline;
+}
+.album_user {
+    font-weight: 500;
+    padding-bottom: 5px;
+    color: var(--dark-blue-header);
+}

@@ -1,19 +1,8 @@
-import { getPosts } from "@/api/posts";
+import { getPosts } from "@/api/getData";
 import Head from "next/head";
 import Link from "next/link";
-import someImg from "../../../public/vercel.svg";
-import Image from "next/image";
-// меняются ли данные (posts, как массив данных)??
- // если данные страницы меняются со временем:
-// const getServerSideProps = async() => {
-//     const posts = await getPosts();
-//     return {
-//         props: {
-//             posts
-//         }
-//     }
-// }
-// если данные неизменны:
+import style from "@/styles/Posts.module.css";
+
  const getStaticProps = async() => {
     const posts = await getPosts();
     return {
@@ -27,31 +16,33 @@ export default function PostsPage({ posts }) {
     return (
         <>
            <Head>
-                <title>It is posts page</title>
+                <title>posts page</title>
             </Head>
-            <h1> Posts page</h1>
-            <ul>
-                {
-                    posts.map(post => (
-                        <li key={post.id}>
-                    
-                        <Link href={`/posts/${post.id}`}>
-                            {post.title}
-                        </Link>
-                        {/* <Link href={{
-                            pathname:`/posts/${post.id}`,
-                            query: {
-                                slug: post.title
-                            }
-                        }}>{post.title}</Link> */}
+            <div className={style.posts_page_wrapper}>
+                <h1 className={style.header}>Posts page</h1>
+                <div className={style.post_card}>
+                    <ul className={style.posts_wrapper}>
+                        {
+                            posts.map(post => (
+                                <li 
+                                    key={post.id}
+                                    className={style.post_wrapper}
+                                >
+                                    <Link href={`/posts/${post.id}`}>
+                                        {post.title}
+                                    </Link>
+                                    <p className={style.post_content}>
+                                        {post.body}
+                                    </p>
+                                </li>
+                            ))
+                        }
+                    </ul>
 
-                        </li>
-                    ))
-                }
-            </ul>
-            <Image src={someImg} />
+                </div>
+                
+            </div>
         </>
-     
     )
   }
 

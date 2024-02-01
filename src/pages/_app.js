@@ -1,6 +1,11 @@
-import Layout from '@/components/Layout'
-import '@/styles/globals.css'
+import '@/styles/globalStyles.css'
 import Head from 'next/head'
+import {Roboto} from "@next/font/google";
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700']
+})
 
 export default function App({ Component, pageProps }) {
 
@@ -11,10 +16,9 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
+      <div className={roboto.className}>
         <Component {...pageProps} />
-      </Layout>
+      </div>
     </>
   )
-  
 }

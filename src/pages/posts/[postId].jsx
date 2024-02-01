@@ -1,23 +1,13 @@
-import { getPostData, getPosts } from "@/api/posts";
+import { getPostData, getPosts } from "@/api/getData";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import useSWR from "swr";
+import style from "@/styles/Post.module.css";
 
  const getStaticProps = async({params}) => {
     const post = await getPostData(params.postId);
     return { 
-        props: { post },
-        // revalidate: 10, // частота пересборки страницы
-        // notFound: !post, // 404 проверка на то что страница есть
-        // redirect: {
-        //     destination: "/",
-        //     permanent: false
-        // } // переводит на другие страницы
+        props: { post }
     }
  }
-
- // инкрементальная статическая регенерация - пересборка страницы без ребилда
-
 
  const getStaticPaths = async() => {
 
@@ -28,42 +18,23 @@ import useSWR from "swr";
     )
     return {
         paths,
-        fallback: false // - 404
-        // true - отправить на промежуточную страницу
-        // "blocking" - белая страница и перезагрузка. 
-        // и роботам это нравится
-
+        fallback: false 
     }
  }
 
 export default function PostPage({ post }) {
-    const router = useRouter();
 
-    if (router.isFallback) {
-        return <div>Loading</div>
-    }
-    const fetcher = (url) => fetch(url).then(res => res.json);
-    const { data, error } = useSWR('/api/user', fetcher);
-    if (!data) {
-        return <div>loading...</div>
-    }
-    if (error) {
-        return <div>error</div>
-    }
-    if (router.isFallback) {
-        return <div>error</div>
-    }
     return (
         <>
            <Head>
                 <title>{"Post " + post.id}</title>
             </Head>
-                <h1>Post page</h1>
-                <h2>{post.title}</h2>
-                <h3>{post.body}</h3>
+            <div className={style.post_wrapper}>
+                <h2 className={style.post_title}>{post.title}</h2>
+                <p className={style.post_content}>{post.body}</p>
 
+            </div>
         </>
-     
     )
   }
 

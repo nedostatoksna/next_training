@@ -1,0 +1,14 @@
+.users_wrapper {
+    padding: 20px 0;
+}
+.user {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.name {
+    min-width: 20%;
+}
+.company {
+    padding-left: 30%;
+}

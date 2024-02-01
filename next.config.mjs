@@ -8,6 +8,7 @@ const nextConfig = {
   images: {
     loader: 'akamai',
     path: '',
+    unoptimized: true
   },
   assetPrefix: isProd ? 'https://myRepoGitPage.io' : undefined,
   reactStrictMode: true,

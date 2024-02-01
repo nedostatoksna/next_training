@@ -1,0 +1,36 @@
+.user_info_wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.user_page_wrapper {
+    padding: 20px 0;
+}
+.user_name {
+    font-weight: 500;
+    padding-bottom: 5px;
+    color: var(--dark-blue-header);
+    letter-spacing: 0.05em;
+}
+.user_company {
+    color: var(--light-grey-text);
+    font-size: 14px;
+}
+.contacts_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30%;
+    color: var(--light-grey-text);
+    font-size: 14px;
+}
+.names_wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
+}
+.link {
+    padding: 5px 0;
+}
+.links_wrapper {
+    margin-top: 10px;
+}

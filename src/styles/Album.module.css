@@ -1,0 +1,19 @@
+.album_wrapper {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.album_title {
+    font-weight: 500;
+    padding-bottom: 5px;
+    color: var(--dark-blue-header);
+}
+.photos_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.photo {
+    padding: 10px;
+}

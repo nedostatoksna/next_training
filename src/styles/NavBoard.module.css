@@ -1,0 +1,17 @@
+.nav_wrapper {
+    padding: 35px 5px;
+}
+.nav_link {
+    text-decoration: underline;
+    font-weight: 800;
+    color: black;
+    min-width: 20%;
+}
+.nav_text {
+    padding-left: 30%;
+}
+.link_wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+}
